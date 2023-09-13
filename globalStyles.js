@@ -5,7 +5,6 @@ export default styles = StyleSheet.create({
     flex: 1,
     alignItems:'center',
     justifyContent: 'center',
-    alignSelf:'center'
   },
   content: {
     flex: 1,
@@ -27,14 +26,7 @@ export default styles = StyleSheet.create({
     textAlign: 'justify',
     fontSize: 15,
     color: '#fff',
-  },
-  imagem: {
-    width: '25%',
-    height: '19%',
-    justifyContent: 'center',
-    alignItens: 'center',
-    alignSelf: 'center',
-    paddingTop: 50,
+    opacity: 1
   },
   viewInput: {
     flexDirection: 'row',
@@ -42,4 +34,13 @@ export default styles = StyleSheet.create({
     alignItems: 'center',
     width: 120,
   },
+  image: {
+    flex: 1,
+    // justifyContent: 'center',
+
+  },
+  vidro:{
+    backgroundColor:"rgba(0, 0, 0, 0.200)",
+   
+  }
 });
