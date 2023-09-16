@@ -16,10 +16,10 @@ export default function App() {
   const calcular = (altura,sexo,peso,imagem) => {
     if(sexo == false){
       let h = parseInt(altura)
-      setPeso(( h - 100 ) - [ ( h - 150 ) / 4 ])
+      setPeso((( h - 100 ) - [ ( h - 150 ) / 4 ]) + "Kg")
     } else if(sexo == true){
       let h = parseInt(altura)
-      setPeso(( h - 100 ) - [ ( h - 150 ) / 2 ])
+      setPeso((( h - 100 ) - [ ( h - 150 ) / 2 ])+ "Kg" )
     };
     // if(sexo==false){
     //   setImagem(imagem1)
@@ -33,36 +33,39 @@ export default function App() {
       <View style={styles.content}>
         <View style={styles.vidro}>
         <Text style={styles.title}>Peso ideal</Text>
-        <Text>Altura</Text>
-        <View>
+        <Text style={styles.textoSimples}>Altura</Text>
+        <View style={styles.viewInput}>
           <TextInput
           value={altura}
           onChangeText={setAltura}
           style={styles.input}
+          keyboardType='numeric'
           />
         </View>
-        <Text>Sexo</Text>
+        <Text style={styles.textoSimples}>Sexo</Text>
         <View style={{display: "flex", flexDirection: "row",  alignItems: "center", justifyContent: "center"}}>
-          <Text>Homem</Text>
+          <Text style={styles.homem}>Homem</Text>
           <Switch
-                trackColor={{ false: '#b1deef', true: '#b1deef' }}
-                thumbColor={sexo ? '#298DC7' : '#298DC7'}
+                trackColor={{ false: '#b1deef', true: '#ffcbdb' }}
+                thumbColor={sexo ? '#ff69b4' : '#298DC7'}
                 ios_backgroundColor="#298DC7"
                 onValueChange={setSexo}
                 value={sexo}
           />
-          <Text>Mulher</Text>
+          <Text style={styles.mulher}>Mulher</Text>
         </View>
-        <Pressable
-          style={{width: '25%', backgroundColor: "#000"}}
-          onPress={() => calcular(altura,sexo,peso,imagem)}
-        >
-          <Text style={{color: "#fff"}}>
-            calcular
-          </Text>
-        </Pressable>
+        <View style={{display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center", paddingTop:15,}}>
+          <Pressable
+            style={!sexo ? styles.botao : styles.botao2}
+            onPress={() => calcular(altura,sexo,peso,imagem)}
+          >
+            <Text style={{color: "#fff", fontWeight: "bold"}}>
+              Calcular
+            </Text>
+          </Pressable>
 
-        <View><Text>{`${peso}`}</Text></View>
+          <View style={{alignItems:"center", justifyContent: "center"}}><Text style={{color: "#fff", fontWeight:"bold"}}>{`${peso}`}</Text></View>
+        </View>
         <StatusBar style="auto" />
         </View>
       </View>

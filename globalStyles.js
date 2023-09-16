@@ -30,7 +30,10 @@ export default styles = StyleSheet.create({
   },
   viewInput: {
     flexDirection: 'row',
-    backgroundColor: '#044e8f',
+    borderStyle: "solid",
+    borderWidth: 3,
+    borderColor: '#fff',
+    borderRadius: 15,
     alignItems: 'center',
     width: 120,
   },
@@ -40,7 +43,51 @@ export default styles = StyleSheet.create({
 
   },
   vidro:{
-    backgroundColor:"rgba(0, 0, 0, 0.200)",
-   
-  }
+    backgroundColor:"rgba(0, 0, 0, 0.500)",
+    borderRadius: 15,
+    paddingHorizontal: 20,
+    paddingVertical:20,
+    width: 250,
+    height: 325,
+    justifyContent: 'center',
+  },
+  textoSimples:{
+    color: "#fff",
+    fontSize: 15,
+    paddingTop:15,
+  },
+  input:{
+    width:"100%",
+    paddingLeft: 5,
+    color: "#fff",
+    fontWeight: "bold",
+  },
+  botao:{
+    width: '50%', 
+    backgroundColor: "#298DC7",
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    paddingVertical:10,
+    alignItems: "center",
+    justifyContent: 'center',
+  },
+  botao2:{
+    width: '50%', 
+    backgroundColor: "#ff69b4",
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    paddingVertical:10,
+    alignItems: "center",
+    justifyContent: 'center',
+  },
+  mulher:{
+    color: "#ffcbdb",
+    paddingLeft: 4,
+    fontWeight: "bold",
+  },
+  homem:{
+    color: "#add8e6",
+    paddingRight: 4,
+    fontWeight: "bold",
+  },
 });
