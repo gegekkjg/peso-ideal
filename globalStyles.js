@@ -15,8 +15,6 @@ export default styles = StyleSheet.create({
   },
  
   title: {
-    
-    fontWeight: "bold",
     textAlign: 'center',
     alignSelf: 'center',
     fontSize: 35,
@@ -36,20 +34,13 @@ export default styles = StyleSheet.create({
     borderRadius: 15,
     alignItems: 'center',
     width: 120,
+    textAlign: 'center',
+    justifyContent: 'center'
   },
   image: {
     flex: 1,
     // justifyContent: 'center',
 
-  },
-  vidro:{
-    backgroundColor:"rgba(0, 0, 0, 0.500)",
-    borderRadius: 15,
-    paddingHorizontal: 20,
-    paddingVertical:20,
-    width: 250,
-    height: 325,
-    justifyContent: 'center',
   },
   textoSimples:{
     color: "#fff",
@@ -81,13 +72,17 @@ export default styles = StyleSheet.create({
     justifyContent: 'center',
   },
   mulher:{
-    color: "#ffcbdb",
+    color: "black",
     paddingLeft: 4,
     fontWeight: "bold",
   },
   homem:{
-    color: "#add8e6",
+    color: "black",
     paddingRight: 4,
     fontWeight: "bold",
   },
+  center:{
+    textAlign:'center',
+    alignItems: 'center'
+  }
 });

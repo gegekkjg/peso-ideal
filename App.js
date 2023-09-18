@@ -4,8 +4,8 @@ import { Pressable, Text, View,Switch, TextInput, Image, ImageBackground } from 
 import styles from './globalStyles';
 
 // http://conversorfacil.com.br/calcular/peso-ideal
-import imagem1 from './assets/men.jpg'
-import imagem2 from './assets/woman.jpg'
+import imagem1 from './assets/homem.png'
+import imagem2 from './assets/mulher.png'
 
 export default function App() {
   const [altura, setAltura] = useState('');
@@ -21,6 +21,12 @@ export default function App() {
       let h = parseInt(altura)
       setPeso((( h - 100 ) - [ ( h - 150 ) / 2 ])+ "Kg" )
     };
+
+    const limparDados = () => {
+      setAltura('');
+      setPeso('');
+          };
+  
     // if(sexo==false){
     //   setImagem(imagem1)
     // } else if(sexo == true){
@@ -31,17 +37,18 @@ export default function App() {
     <View style={styles.container}>
       <ImageBackground source={!sexo ? imagem1 : imagem2} resizeMode="cover" style={{width: '100%', height: "100%"}}>
       <View style={styles.content}>
-        <View style={styles.vidro}>
+        <View>
         <Text style={styles.title}>Peso ideal</Text>
-        <Text style={styles.textoSimples}>Altura</Text>
-        <View style={styles.viewInput}>
-          <TextInput
-          value={altura}
-          onChangeText={setAltura}
-          style={styles.input}
-          keyboardType='numeric'
-          />
-        </View>
+        <View style={styles.center}>
+          <Text style={styles.textoSimples}>Altura</Text>
+          <View style={styles.viewInput}>
+            <TextInput
+            value={altura}
+            onChangeText={setAltura}
+            style={styles.input}
+            keyboardType='numeric'
+            />
+          </View>
         <Text style={styles.textoSimples}>Sexo</Text>
         <View style={{display: "flex", flexDirection: "row",  alignItems: "center", justifyContent: "center"}}>
           <Text style={styles.homem}>Homem</Text>
@@ -64,9 +71,10 @@ export default function App() {
             </Text>
           </Pressable>
 
-          <View style={{alignItems:"center", justifyContent: "center"}}><Text style={{color: "#fff", fontWeight:"bold"}}>{`${peso}`}</Text></View>
         </View>
+        <View><Text style={{color: "#fff", fontWeight:"bold"}}>{`${peso}`}</Text></View>
         <StatusBar style="auto" />
+        </View>
         </View>
       </View>
       </ImageBackground>
